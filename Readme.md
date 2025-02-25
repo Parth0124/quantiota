@@ -50,8 +50,8 @@ Similar updates were applied to \( G_1 \) and the bias term \( b_1 \).
 ## 📊 **3. Performance Comparison**
 | **Metric**              | **Classical Model** | **Entropy-Gradient Model** |
 |-------------------------|---------------------|----------------------------|
-| Train Accuracy (Final)  | 87.5%               | 88.3%                      |
-| Test Accuracy (Final)   | 85.2%               | 88.5%                      |
+| Train Accuracy (Final)  | 89.94%              | 90.14%                     |
+| Test Accuracy (Final)   | 50.85%              | 50.74%                     |
 | Training Stability      | Moderate            | Higher (z constraint)      |
 | Convergence Speed       | Faster (Adam)       | Slightly slower            |
 
@@ -70,26 +70,28 @@ Similar updates were applied to \( G_1 \) and the bias term \( b_1 \).
 ---
 
 ## 🚀 **5. Conclusion**
-The entropy-gradient framework with z mapping constraints resulted in a more stable and generalizable classifier for even/odd MNIST classification. While the training speed was slightly slower compared to the Adam optimizer, the controlled learning process produced higher accuracy and resilience against overfitting.
+The entropy-gradient framework with z mapping constraints resulted in a more stable and generalizable classifier for even/odd (0/1) MNIST classification. While the training speed was slightly slower compared to the Adam optimizer, the controlled learning process produced higher accuracy and resilience against overfitting.
 
 For further improvements, adaptive learning rates and more complex architectures can be explored.
 
 ---
 
 ## 📝 **6. How to Run**
-1. Install dependencies:
+1. Install the environment
 ```bash
-pip install tensorflow numpy matplotlib seaborn
+conda env create -f environment.yml
 ```
 
-2. Run the Python script:
+2. Activate the environment
 ```bash
-python entropy_gradient_classifier.py
+conda activate quantiotaenv
 ```
+
+3. Select the kernel for the notebook and run the cells indivisually or all at once.
 
 3. Expected output:
 - Epoch-wise accuracy.
-- Classification report.
-- Confusion matrix.
+- Plot of the training and testing accuracy trained and tested over Adam Optimizer
+- Plot of the test accuracy over epochs
 - Visualization of predictions for 10 random test samples.
 
